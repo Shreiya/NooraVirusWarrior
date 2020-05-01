@@ -10,7 +10,7 @@ public class EmailPassword : MonoBehaviour
 {
 
     private FirebaseAuth auth;
-    public InputField UserNameInput, PasswordInput;
+    public InputField NameInput, UserNameInput, PasswordInput;
     public Button SignupButton, LoginButton;
     public Text ErrorText;
 
@@ -18,8 +18,19 @@ public class EmailPassword : MonoBehaviour
     {
         auth = FirebaseAuth.DefaultInstance;
         //Just an example to save typing in the login form
-        UserNameInput.text = "demofirebase@gmail.com";
-        PasswordInput.text = "abcdefgh";
+        var u_name = PlayerPrefs.GetString("U_NAME");
+        var u_email = PlayerPrefs.GetString("U_EMAIL");
+        var u_pass = PlayerPrefs.GetString("U_PASS");
+
+        if (u_email != null && u_pass != null && u_name != null)
+        {
+            NameInput.text = u_name;
+            UserNameInput.text = u_email;
+            PasswordInput.text = u_pass;
+
+            // Login User Automatically
+            Login(u_email, u_pass);
+        }
 
         SignupButton.onClick.AddListener(() => Signup(UserNameInput.text, PasswordInput.text));
         LoginButton.onClick.AddListener(() => Login(UserNameInput.text, PasswordInput.text));
@@ -53,11 +64,11 @@ public class EmailPassword : MonoBehaviour
             Debug.LogFormat("Firebase user created successfully: {0} ({1})",
                 newUser.DisplayName, newUser.UserId);
             UpdateErrorMessage("Signup Success");
-            UpdateUserName();
+            UpdateName();
         });
     }
 
-    public void UpdateUserName()
+    public void UpdateName()
     {
         //Update User Name
 
@@ -66,7 +77,7 @@ public class EmailPassword : MonoBehaviour
         {
             Firebase.Auth.UserProfile profile = new Firebase.Auth.UserProfile
             {
-                DisplayName = "NOORA HEALTH. User",
+                DisplayName = NameInput.text,
                 PhotoUrl = new System.Uri("https://example.com/jane-q-user/profile.jpg"),
             };
             user.UpdateUserProfileAsync(profile).ContinueWith(task =>
@@ -119,7 +130,10 @@ public class EmailPassword : MonoBehaviour
             Debug.LogFormat("User signed in successfully: {0} ({1})",
                 user.DisplayName, user.UserId);
 
-            PlayerPrefs.SetString("LoginUser", user != null ? user.Email : "Unknown");
+            PlayerPrefs.SetString("U_EMAIL", user != null ? user.Email : "Unknown");
+            PlayerPrefs.SetString("U_NAME", user != null ? user.DisplayName : "Unknown");
+            PlayerPrefs.SetString("U_PASS", user != null ? PasswordInput.text : "Unknown");
+            PlayerPrefs.SetString("U_ID", user != null ? user.UserId : "Unknown");
             SceneManager.LoadScene("LoginResults");
         });
     }
