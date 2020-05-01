@@ -54,6 +54,7 @@ public class EmailPassword : MonoBehaviour
             return;
         }
 
+        PlayerPrefs.SetString("U_EMAIL", email);
         auth.CreateUserWithEmailAndPasswordAsync(email, password).ContinueWith(task =>
         {
             if (task.IsCanceled)
@@ -76,7 +77,8 @@ public class EmailPassword : MonoBehaviour
             // Update User's Name
             UpdateName();
             // LogIn User
-            Login(UserNameInput.text, PasswordInput);
+            Debug.Log(PlayerPrefs.GetString("U_EMAIL") + "  " + PlayerPrefs.GetString("U_PASS"));
+            Login(PlayerPrefs.GetString("U_EMAIL"), PlayerPrefs.GetString("U_PASS"));
         });
     }
 
@@ -144,7 +146,7 @@ public class EmailPassword : MonoBehaviour
 
             PlayerPrefs.SetString("U_EMAIL", user != null ? user.Email : "Unknown");
             PlayerPrefs.SetString("U_NAME", user != null ? user.DisplayName : "Unknown");
-            // PlayerPrefs.SetString("U_PASS", user != null ? PasswordInput : "Unknown");
+            PlayerPrefs.SetString("U_PASS", user != null ? PasswordInput : "Unknown");
             PlayerPrefs.SetString("U_ID", user != null ? user.UserId : "Unknown");
             // SceneManager.LoadScene("LoginResults");
 
