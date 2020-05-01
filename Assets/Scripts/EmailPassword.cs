@@ -74,10 +74,19 @@ public class EmailPassword : MonoBehaviour
             Debug.LogFormat("Firebase user created successfully: {0} ({1})",
                 newUser.DisplayName, newUser.UserId);
             UpdateErrorMessage("Signup Success");
+
+
+            PlayerPrefs.SetString("U_EMAIL", newUser != null ? newUser.Email : "Unknown");
+            PlayerPrefs.SetString("U_PASS", newUser != null ? PasswordInput : "Unknown");
+            PlayerPrefs.SetString("U_NAME", newUser != null ? newUser.DisplayName : "Unknown");
+            PlayerPrefs.SetString("U_ID", newUser != null ? newUser.UserId : "Unknown");
+
             // Update User's Name
             UpdateName();
+
+            Debug.Log("-------------------------------- \n" + PlayerPrefs.GetString("U_EMAIL") + "  " + PlayerPrefs.GetString("U_PASS") + "  " + PlayerPrefs.GetString("U_NAME") + "  " + PlayerPrefs.GetString("U_ID"));
+
             // LogIn User
-            Debug.Log(PlayerPrefs.GetString("U_EMAIL") + "  " + PlayerPrefs.GetString("U_PASS"));
             Login(PlayerPrefs.GetString("U_EMAIL"), PlayerPrefs.GetString("U_PASS"));
         });
     }
@@ -144,17 +153,14 @@ public class EmailPassword : MonoBehaviour
             Debug.LogFormat("User signed in successfully: {0} ({1})",
                 user.DisplayName, user.UserId);
 
-            PlayerPrefs.SetString("U_EMAIL", user != null ? user.Email : "Unknown");
             PlayerPrefs.SetString("U_NAME", user != null ? user.DisplayName : "Unknown");
-            PlayerPrefs.SetString("U_PASS", user != null ? PasswordInput : "Unknown");
-            PlayerPrefs.SetString("U_ID", user != null ? user.UserId : "Unknown");
             // SceneManager.LoadScene("LoginResults");
-
+            Debug.Log("-------------------------------- \n" + PlayerPrefs.GetString("U_EMAIL") + "  " + PlayerPrefs.GetString("U_PASS") + "  " + PlayerPrefs.GetString("U_NAME") + "  " + PlayerPrefs.GetString("U_ID"));
             signUpUI.SetActive(false);
             loggedInUI.SetActive(true);
 
             // Log In Message
-            var userName = PlayerPrefs.GetString("U_NAME", "Unknown");
+            var userName = PlayerPrefs.GetString("U_NAME");
             LoginResultText.text = "Welcome " + userName + " to GoCorona Game!!";
             Debug.LogFormat("Successfully signed in as {0}", userName);
         });
