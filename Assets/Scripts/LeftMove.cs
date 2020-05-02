@@ -8,6 +8,6 @@ public class LeftMove : MonoBehaviour
     void Update()
     {
         //transform.Translate(Vector3.up * Time.deltaTime * 1.5f);
-        transform.Translate(Vector3.left * Time.deltaTime * 0.5f);
+        transform.Translate(Vector3.left * Time.deltaTime * 0.1f);
     }
 }
