@@ -1687,7 +1687,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &2061600609
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1830,6 +1830,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Logged In UI
       objectReference: {fileID: 0}
+    - target: {fileID: 5200966532959981868, guid: 628cf9c61be88ac48952e318d2689af0,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5200966532959981871, guid: 628cf9c61be88ac48952e318d2689af0,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1954,6 +1959,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: How to Play UI
       objectReference: {fileID: 0}
+    - target: {fileID: 6087795606570587604, guid: 36bd4d9f0f389864f8a96e611bed5ef2,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6087795606570587605, guid: 36bd4d9f0f389864f8a96e611bed5ef2,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2059,10 +2069,35 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 6087795607183431840, guid: 36bd4d9f0f389864f8a96e611bed5ef2,
+        type: 3}
+      propertyPath: m_PreserveAspect
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6087795607183431842, guid: 36bd4d9f0f389864f8a96e611bed5ef2,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6087795607406137580, guid: 36bd4d9f0f389864f8a96e611bed5ef2,
+        type: 3}
+      propertyPath: m_PreserveAspect
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6087795608413968954, guid: 36bd4d9f0f389864f8a96e611bed5ef2,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
       objectReference: {fileID: 111575581}
+    - target: {fileID: 6087795608651114619, guid: 36bd4d9f0f389864f8a96e611bed5ef2,
+        type: 3}
+      propertyPath: m_PreserveAspect
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6087795608651114621, guid: 36bd4d9f0f389864f8a96e611bed5ef2,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 36bd4d9f0f389864f8a96e611bed5ef2, type: 3}
