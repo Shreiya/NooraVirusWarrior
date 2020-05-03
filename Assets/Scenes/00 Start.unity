@@ -1818,7 +1818,7 @@ PrefabInstance:
     - target: {fileID: 5200966530926617417, guid: 628cf9c61be88ac48952e318d2689af0,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
-      value: 03 Leaderboard
+      value: 02 Leaderboard
       objectReference: {fileID: 0}
     - target: {fileID: 5200966531226105942, guid: 628cf9c61be88ac48952e318d2689af0,
         type: 3}

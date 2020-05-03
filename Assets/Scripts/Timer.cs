@@ -42,8 +42,6 @@ public class Timer : MonoBehaviour
         SpawnScript.SetActive(false);
         ShootScript.SetActive(false);
 
-        TimerBackground.SetActive(false);
-
         Crosshair.SetActive(false);
         FireButton.SetActive(false);
         ScoreboardPanel.SetActive(true);

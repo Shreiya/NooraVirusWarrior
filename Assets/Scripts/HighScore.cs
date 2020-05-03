@@ -5,18 +5,17 @@ using UnityEngine.UI;
 
 public class HighScore : MonoBehaviour
 {
-    public static int endValue = 0;
-    Text HighScoree;
+    public Text ScoreValue;
+    public Text HighScoreValue;
 
     // Start is called before the first frame update
     void Start()
     {
-        HighScoree = GetComponent<Text>();
+        HighScoreValue.text = ScoreValue.text;
     }
 
     // Update is called once per frame
     void Update()
     {
-        HighScoree.text = "" + ScoreScript.scoreValue;
     }
 }
