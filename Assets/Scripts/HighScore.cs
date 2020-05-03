@@ -17,6 +17,6 @@ public class HighScore : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        HighScoree.text = "YOUR SCORE: " + ScoreScript.scoreValue;
+        HighScoree.text = "" + ScoreScript.scoreValue;
     }
 }

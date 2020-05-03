@@ -7,42 +7,46 @@ public class Timer : MonoBehaviour
 {
     public float timerTime;
     public Text timerText;
-    public GameObject Timerr;
-    public GameObject ScoreText;
+    public GameObject TimerScript;
+    public GameObject TimerBackground;
     public GameObject SpawnScript;
     public GameObject ShootScript;
-    public GameObject button;
-    public GameObject HighScore;
-    public GameObject Textt;
-    public GameObject Imagee;
-    Text HighScoree;
+    public GameObject FireButton;
+    public GameObject ScoreboardPanel;
+    public GameObject Crosshair;
+    // public GameObject Imagee;
     
     
     private void Update()
     {
-        timerTime -= Time.deltaTime;
-        WriteToText(timerTime.ToString("F1"));
-
-        if (timerTime <= 0)
+        if (timerTime > 0)
         {
-            Timerr.SetActive(false);
-            ScoreText.SetActive(false);
-            SpawnScript.SetActive(false);
-            ShootScript.SetActive(false);
-            button.SetActive(false);
-            Textt.SetActive(false);
-            Imagee.SetActive(false);
-            HighScore.SetActive(true);
-           
+            timerTime -= Time.deltaTime;
+            UpdateTimer(timerTime.ToString("F0"));
         }
-
+        else
+        {
+            UpdateTimer("0");
+            OnTimerEnd();
+        }
     }
 
-    void WriteToText(string str_)
+    void UpdateTimer(string txt)
     {
-        timerText.text =("Time Left:" + str_ + "sec");
+        timerText.text =(txt);      
+    }
 
-      
+    void OnTimerEnd()
+    {
+        TimerScript.SetActive(false);
+        SpawnScript.SetActive(false);
+        ShootScript.SetActive(false);
+
+        TimerBackground.SetActive(false);
+
+        Crosshair.SetActive(false);
+        FireButton.SetActive(false);
+        ScoreboardPanel.SetActive(true);
     }
 
 }

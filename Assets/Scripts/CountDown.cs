@@ -5,38 +5,40 @@ using UnityEngine.UI;
 
 public class CountDown : MonoBehaviour
 {
-    public float count;
-    public Text countText;
-    public GameObject countDownn;
-    public GameObject CountText;
-    public GameObject Timerr;
+    public float CountdownTime;
+    public Text CountdownText;
+    public GameObject CountdownScript;
+    public GameObject Countdown;
+    public GameObject TimerScript;
+    // public GameObject TimerBackground;
     public GameObject HighScore;
-
+    public GameObject CrossHair;
 
     private void Start()
     {
-        Timerr.SetActive(false);
+        TimerScript.SetActive(false);
+        CrossHair.SetActive(true);
         HighScore.SetActive(false);
+        // TimerBackground.SetActive(false);
     }
 
     private void Update()
     {
-        count -= Time.deltaTime;
-        WriteToText(count.ToString("F0"));
+        CountdownTime-= Time.deltaTime;
+        UpdateCountdown(CountdownTime.ToString("F0"));
 
-
-        if (count <= 0)
+        if (CountdownTime<= 0)
         {
-            countDownn.SetActive(false);
-            CountText.SetActive(false);
-            Timerr.SetActive(true);
-
+            CountdownScript.SetActive(false);
+            Countdown.SetActive(false);
+            TimerScript.SetActive(true);
+            CrossHair.SetActive(true);
+            // TimerBackground.SetActive(true);
         }
-
     }
 
-    void WriteToText(string strr)
+    void UpdateCountdown(string txt)
     {
-        countText.text = (strr);
+        CountdownText.text = (txt);
     }
 }
