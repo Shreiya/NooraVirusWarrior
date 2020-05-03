@@ -11,14 +11,16 @@ public class SpawnScript : MonoBehaviour
     void Start()
     {
         StartCoroutine(StartSpawning());
+        //DestroyObjectDelayed();
     }
     IEnumerator StartSpawning()
     {
-        yield return new WaitForSeconds(4);
-        for (int i = 0; i < 15; i++)
+        yield return new WaitForSeconds(5);
+        for (int i = 0; i < 12; i++)
         {
             Instantiate(Virus[i], SpawnPoint[i].position, Quaternion.identity);
         }
+
         StartCoroutine(StartSpawning());
     }
 
@@ -26,4 +28,5 @@ public class SpawnScript : MonoBehaviour
     {
         transform.Translate(Vector3.up * Time.deltaTime * 0.1f);
     }
+  
 }
