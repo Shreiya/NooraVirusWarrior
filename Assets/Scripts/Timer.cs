@@ -11,12 +11,11 @@ public class Timer : MonoBehaviour
     public GameObject TimerBackground;
     public GameObject SpawnScript;
     public GameObject ShootScript;
-    public GameObject FireButton;
+    // public GameObject FireButton;
     public GameObject ScoreboardPanel;
-    public GameObject Crosshair;
-    // public GameObject Imagee;
     
-    
+    // public GameObject Crosshair;
+
     private void Update()
     {
         if (timerTime > 0)
@@ -42,8 +41,8 @@ public class Timer : MonoBehaviour
         SpawnScript.SetActive(false);
         ShootScript.SetActive(false);
 
-        Crosshair.SetActive(false);
-        FireButton.SetActive(false);
+        // Crosshair.SetActive(false);
+        // FireButton.SetActive(false);
         ScoreboardPanel.SetActive(true);
     }
 

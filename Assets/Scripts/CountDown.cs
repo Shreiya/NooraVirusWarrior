@@ -12,12 +12,12 @@ public class CountDown : MonoBehaviour
     public GameObject TimerScript;
     // public GameObject TimerBackground;
     public GameObject HighScore;
-    public GameObject CrossHair;
+    // public GameObject CrossHair;
 
     private void Start()
     {
         TimerScript.SetActive(false);
-        CrossHair.SetActive(true);
+        // CrossHair.SetActive(true);
         HighScore.SetActive(false);
         // TimerBackground.SetActive(false);
     }
@@ -32,7 +32,7 @@ public class CountDown : MonoBehaviour
             CountdownScript.SetActive(false);
             Countdown.SetActive(false);
             TimerScript.SetActive(true);
-            CrossHair.SetActive(true);
+            // CrossHair.SetActive(true);
             // TimerBackground.SetActive(true);
         }
     }
