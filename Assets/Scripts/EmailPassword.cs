@@ -5,47 +5,67 @@ using Firebase.Auth;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using System;
+using System.Security.Cryptography;
+using System.Text;
 
 public class EmailPassword : MonoBehaviour
 {
 
-    public GameObject signUpUI;
-    public GameObject loggedInUI;
-
+    // public GameObject signUpUI;
+    // public GameObject loggedInUI;
 
     private FirebaseAuth auth;
-    public InputField NameInput, UserNameInput;
-    string PasswordInput;
+    public InputField NameInput;
+    string PasswordInput, UserNameInput;
     public Button SignupButton;
     // public Button LoginButton;
     public Text ErrorText;
     public Text LoginResultText;
 
+    internal static readonly char[] chars =
+        "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890".ToCharArray();
+
+
+    // Start Method
     void Start()
     {
         auth = FirebaseAuth.DefaultInstance;
         //Just an example to save typing in the login form
-        PlayerPrefs.SetString("U_PASS", "NooraHealth");
-
+        PlayerPrefs.SetString("U_PASS", "GoCorona");
+        
         var u_name = PlayerPrefs.GetString("U_NAME");
+
         var u_email = PlayerPrefs.GetString("U_EMAIL");
+
+        Debug.Log("Current Email ID = " + u_email);
+        // If Email is null, Assign a new Email
+        if(u_email== "")
+        {
+            System.Random size = new System.Random();
+            string randomEmail = GetUniqueKey(size.Next(8, 16)) + "@gocorona.com";
+            PlayerPrefs.SetString("U_EMAIL", randomEmail);
+            Debug.Log("New email created: " + randomEmail);
+        }
+
+        u_email = PlayerPrefs.GetString("U_EMAIL");
+
         var u_pass = PlayerPrefs.GetString("U_PASS");
 
         if (u_email != null && u_pass != null && u_name != null)
         {
             NameInput.text = u_name;
-            UserNameInput.text = u_email;
+            UserNameInput = u_email;
             PasswordInput = u_pass;
 
             // Login User Automatically
             Login(u_email, u_pass);
         }
 
-        SignupButton.onClick.AddListener(() => Signup(UserNameInput.text, PasswordInput));
-        // LoginButton.onClick.AddListener(() => Login(UserNameInput.text, PasswordInput));
+        SignupButton.onClick.AddListener(() => Signup(UserNameInput, PasswordInput));
+        // LoginButton.onClick.AddListener(() => Login(UserNameInput, PasswordInput));
     }
 
-
+    // Sign Up user in Database
     public void Signup(string email, string password)
     {
         if (string.IsNullOrEmpty(email) || string.IsNullOrEmpty(password))
@@ -84,13 +104,14 @@ public class EmailPassword : MonoBehaviour
             // Update User's Name
             UpdateName();
 
-            Debug.Log("-------------------------------- \n" + PlayerPrefs.GetString("U_EMAIL") + "  " + PlayerPrefs.GetString("U_PASS") + "  " + PlayerPrefs.GetString("U_NAME") + "  " + PlayerPrefs.GetString("U_ID"));
+            Debug.Log("--------------Creds------------------ \n" + PlayerPrefs.GetString("U_EMAIL") + "  " + PlayerPrefs.GetString("U_PASS") + "  " + PlayerPrefs.GetString("U_NAME") + "  " + PlayerPrefs.GetString("U_ID"));
 
             // LogIn User
             Login(PlayerPrefs.GetString("U_EMAIL"), PlayerPrefs.GetString("U_PASS"));
         });
     }
 
+    // Update User's Name in Database
     public void UpdateName()
     {
         //Update User Name
@@ -122,16 +143,21 @@ public class EmailPassword : MonoBehaviour
         }
 
     }
+
+    // Update Error Message
     private void UpdateErrorMessage(string message)
     {
         ErrorText.text = message;
         Invoke("ClearErrorMessage", 3);
     }
 
+    // Clear Error Message
     void ClearErrorMessage()
     {
         ErrorText.text = "";
     }
+
+    // Login User
     public void Login(string email, string password)
     {
         auth.SignInWithEmailAndPasswordAsync(email, password).ContinueWith(task =>
@@ -153,16 +179,39 @@ public class EmailPassword : MonoBehaviour
             Debug.LogFormat("User signed in successfully: {0} ({1})",
                 user.DisplayName, user.UserId);
 
+            SceneManager.LoadScene("00 Start");
+
             PlayerPrefs.SetString("U_NAME", user != null ? user.DisplayName : "Unknown");
             // SceneManager.LoadScene("LoginResults");
-            Debug.Log("-------------------------------- \n" + PlayerPrefs.GetString("U_EMAIL") + "  " + PlayerPrefs.GetString("U_PASS") + "  " + PlayerPrefs.GetString("U_NAME") + "  " + PlayerPrefs.GetString("U_ID"));
-            signUpUI.SetActive(false);
-            loggedInUI.SetActive(true);
+            Debug.Log("-------------Creds------------------- \n" + PlayerPrefs.GetString("U_EMAIL") + "  " + PlayerPrefs.GetString("U_PASS") + "  " + PlayerPrefs.GetString("U_NAME") + "  " + PlayerPrefs.GetString("U_ID"));
+            // signUpUI.SetActive(false);
+            // loggedInUI.SetActive(true);
 
             // Log In Message
             var userName = PlayerPrefs.GetString("U_NAME");
             LoginResultText.text = "Welcome " + userName + " to GoCorona Game!!";
             Debug.LogFormat("Successfully signed in as {0}", userName);
         });
+    }
+
+
+    // Generate Random String
+    public static string GetUniqueKey(int size)
+    {
+        byte[] data = new byte[4 * size];
+        using (RNGCryptoServiceProvider crypto = new RNGCryptoServiceProvider())
+        {
+            crypto.GetBytes(data);
+        }
+        StringBuilder result = new StringBuilder(size);
+        for (int i = 0; i < size; i++)
+        {
+            var rnd = BitConverter.ToUInt32(data, i * 4);
+            var idx = rnd % chars.Length;
+
+            result.Append(chars[idx]);
+        }
+
+        return result.ToString();
     }
 }
