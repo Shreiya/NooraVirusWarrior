@@ -16,6 +16,11 @@ public class Timer : MonoBehaviour
     
     // public GameObject Crosshair;
 
+    private void Start() 
+    {
+        timerText.text = "60";
+    }
+    
     private void Update()
     {
         if (timerTime > 0)
