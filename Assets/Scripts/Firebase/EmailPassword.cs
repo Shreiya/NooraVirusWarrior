@@ -100,6 +100,9 @@ public class EmailPassword : MonoBehaviour
             PlayerPrefs.SetString("U_PASS", newUser != null ? PasswordInput : "Unknown");
             PlayerPrefs.SetString("U_NAME", newUser != null ? newUser.DisplayName : "Unknown");
             PlayerPrefs.SetString("U_ID", newUser != null ? newUser.UserId : "Unknown");
+            
+            //Set Default Score to 0
+            PlayerPrefs.SetInt("U_SCORE", 0);
 
             // Update User's Name
             UpdateName();
