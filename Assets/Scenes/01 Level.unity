@@ -362,7 +362,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f810bf92ab7920746b78aa25f56dbb08, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timerTime: 15
+  timerTime: 60
   timerText: {fileID: 1920882127}
   TimerScript: {fileID: 163343705}
   TimerBackground: {fileID: 819133548}
@@ -2250,6 +2250,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 736a0549aeb536a4fa0c29a08003f6e4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  PlayerNames: []
+  ScoreValues: []
 --- !u!1 &1246652985
 GameObject:
   m_ObjectHideFlags: 0
