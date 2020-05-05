@@ -39,7 +39,7 @@ public class GetTopScores : MonoBehaviour
     public void GetScores()
     {
         FirebaseDatabase.DefaultInstance
-        .GetReference("users").OrderByChild("PlayerScore").OrderByValue().LimitToLast(10)
+        .GetReference("users").OrderByChild("PlayerScore").LimitToLast(10)
         .ValueChanged += HandleValueChanged;
     }
 
@@ -53,14 +53,14 @@ public class GetTopScores : MonoBehaviour
 
         DataSnapshot snap = args.Snapshot;
 
-        int index = 0;
+        int index = 9;
         foreach (var userId in snap.Children)
         {
 
             PlayerNames[index].text = "" + userId.Child("PlayerName").Value.ToString();
             ScoreValues[index].text = "" + userId.Child("PlayerScore").Value.ToString();
 
-            index++;
+            index--;
         }
     }
 }
