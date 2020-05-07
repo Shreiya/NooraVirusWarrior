@@ -16,8 +16,9 @@ GameObject:
   - component: {fileID: 4794576291870767779}
   - component: {fileID: 5150393293154856454}
   - component: {fileID: 4988517503413199009}
+  - component: {fileID: 4605335718100197863}
   m_Layer: 0
-  m_Name: Virus Sphere
+  m_Name: Virus Sphere Left
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -152,7 +153,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 822ec214ce36b4a40b639f1fca604b48, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Camera: {fileID: 0}
+  reverseFace: 0
+  axis: 0
+--- !u!114 &4605335718100197863
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4594948315987187422}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c554a4a1620e2ec4bb010f851a601da7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &5187983831435340983
 GameObject:
   m_ObjectHideFlags: 0
