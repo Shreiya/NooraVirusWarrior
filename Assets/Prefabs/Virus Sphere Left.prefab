@@ -17,9 +17,10 @@ GameObject:
   - component: {fileID: 5150393293154856454}
   - component: {fileID: 4988517503413199009}
   - component: {fileID: 4605335718100197863}
+  - component: {fileID: 6375402794991301335}
   m_Layer: 0
   m_Name: Virus Sphere Left
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -94,7 +95,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4594948315987187422}
   serializedVersion: 2
-  m_Mass: 0.0000001
+  m_Mass: 5
   m_Drag: 0
   m_AngularDrag: 0.05
   m_UseGravity: 0
@@ -164,7 +165,19 @@ MonoBehaviour:
   m_GameObject: {fileID: 4594948315987187422}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c554a4a1620e2ec4bb010f851a601da7, type: 3}
+  m_Script: {fileID: 11500000, guid: b093c40e789391e4cbfd6f17a748857a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &6375402794991301335
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4594948315987187422}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 430b2c7dfa166f047b8ffadf369f26bc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &5187983831435340983
