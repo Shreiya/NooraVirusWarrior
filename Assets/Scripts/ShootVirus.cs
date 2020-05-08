@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class ShootVirus : MonoBehaviour
 {
+
+    public GameObject SlashAnim;
     public GameObject MainCamera;
     //public GameObject smoke;
 
@@ -45,16 +47,42 @@ public class ShootVirus : MonoBehaviour
         if (Input.GetMouseButtonDown(0))
         {
             var ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+            
             RaycastHit hitInfo;
             if (Physics.Raycast(ray, out hitInfo))
             {
                 var rig = hitInfo.collider.GetComponent<Rigidbody>();
                 if (rig != null)
                 {
-                    Destroy(rig.gameObject);
+                    var ani = Instantiate(SlashAnim, rig.position, Quaternion.identity) as GameObject;
+                    Destroy(rig.gameObject, .5F);
+                    Destroy(ani.gameObject, .5F);
                     ScoreScript.scoreValue += 1;
                 }
             }
         }
+        // Slice Animation
+        // Vector3 fingerPos = Input.GetTouch(0).position;
+        // fingerPos.z = 0;
+        // // Vector3 objPos = Camera.main.ScreenToWorldPoint(fingerPos);
+        // var ani = Instantiate(SlashAnim, fingerPos, Quaternion.identity) as GameObject;
+        // Destroy(ani, 1);
+        // var cam = MainCamera.GetComponent<Camera>();
+
+        // Vector3 point = new Vector3();
+        // Event currentEvent = Event.current;
+        // Vector2 mousePos = new Vector2();
+
+        // // Get the mouse position from Event.
+        // // Note that the y position from Event is inverted.
+        // mousePos.x = currentEvent.mousePosition.x;
+        // mousePos.y = cam.pixelHeight - currentEvent.mousePosition.y;
+
+        // point = cam.ScreenToWorldPoint(new Vector3(mousePos.x, mousePos.y, cam.nearClipPlane));
+
+        // Instantiate(SlashAnim, point, Quaternion.identity);
+
+
+        // End of Slice Animation
     }
 }
