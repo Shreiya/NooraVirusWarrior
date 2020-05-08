@@ -3008,7 +3008,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 22c5294c9cba81d45b11d2ab21871d04, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SlashAnim: {fileID: 6452752508163028075, guid: 224fb29c5a396a242ab32b06f821847b,
+  SlashAnim: {fileID: 6452752508163028075, guid: f4ab3cba832da5349a74f2b08d78f2b7,
     type: 3}
   MainCamera: {fileID: 635688702}
 --- !u!4 &1833480841
