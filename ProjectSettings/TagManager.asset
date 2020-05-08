@@ -6,6 +6,7 @@ TagManager:
   tags:
   - XRController
   - Enemy
+  - EnemyBoss
   layers:
   - Default
   - TransparentFX

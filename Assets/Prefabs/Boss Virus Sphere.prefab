@@ -19,9 +19,10 @@ GameObject:
   - component: {fileID: 5126009532415684464}
   - component: {fileID: 2582806253700139259}
   - component: {fileID: -2253496423920565646}
+  - component: {fileID: -5892973320452403638}
   m_Layer: 0
   m_Name: Boss Virus Sphere
-  m_TagString: Enemy
+  m_TagString: EnemyBoss
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -277,6 +278,18 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &-5892973320452403638
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4594948315987187422}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e4f7f8bb526e67f4188f960edada7188, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &5187983831435340983
 GameObject:
   m_ObjectHideFlags: 0
