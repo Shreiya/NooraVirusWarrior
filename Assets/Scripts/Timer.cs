@@ -13,6 +13,7 @@ public class Timer : MonoBehaviour
     public GameObject ShootScript;
     // public GameObject FireButton;
     public GameObject ScoreboardPanel;
+    public GameObject AltScoreboardPanel;
     
     // public GameObject Crosshair;
 
@@ -48,7 +49,15 @@ public class Timer : MonoBehaviour
 
         // Crosshair.SetActive(false);
         // FireButton.SetActive(false);
-        ScoreboardPanel.SetActive(true);
+
+        if(ScoreScript.scoreValue <= 10)
+        {
+            AltScoreboardPanel.SetActive(true);
+        }
+        else
+        {
+            ScoreboardPanel.SetActive(true);
+        }
     }
 
 }
