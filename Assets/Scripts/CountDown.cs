@@ -6,7 +6,8 @@ using UnityEngine.UI;
 public class CountDown : MonoBehaviour
 {
     public float CountdownTime;
-    public Text CountdownText;
+    public Image CountdownImage;
+
     public GameObject CountdownScript;
     public GameObject Countdown;
     public GameObject TimerScript;
@@ -14,18 +15,46 @@ public class CountDown : MonoBehaviour
     public GameObject HighScore;
     // public GameObject CrossHair;
 
+    public Sprite TWO, ONE, GO;
+
     private void Start()
     {
         TimerScript.SetActive(false);
         // CrossHair.SetActive(true);
         HighScore.SetActive(false);
         // TimerBackground.SetActive(false);
+        // TWO = Resources.Load<Sprite>("Textures/NewUIAssets/TWO");
+        // ONE = Resources.Load<Sprite>("Textures/NewUIAssets/ONE");
+        // GO = Resources.Load<Sprite>("Textures/NewUIAssets/GO");
+
     }
 
     private void Update()
     {
+        RectTransform CountDownTransform = CountdownImage.GetComponent<RectTransform>();
+
         CountdownTime-= Time.deltaTime;
-        UpdateCountdown(CountdownTime.ToString("F0"));
+        // UpdateCountdown(CountdownTime.ToString("F0"));
+
+        if (CountdownTime > 3F)
+        {
+            // pass
+        }
+        else if (CountdownTime.ToString("F0") == "3")
+        {
+            CountdownImage.GetComponent<Image>().overrideSprite = TWO;
+            CountDownTransform.sizeDelta = new Vector2 (407, 407);
+        }
+        else if (CountdownTime.ToString("F0") == "2")
+        {
+            CountdownImage.GetComponent<Image>().overrideSprite = ONE;
+            CountDownTransform.sizeDelta = new Vector2 (307, 307);
+        }
+        else
+        {
+            CountdownImage.GetComponent<Image>().overrideSprite = GO;
+            CountDownTransform.sizeDelta = new Vector2 (207, 207);
+        }
 
         if (CountdownTime<= 0)
         {
@@ -37,8 +66,8 @@ public class CountDown : MonoBehaviour
         }
     }
 
-    void UpdateCountdown(string txt)
-    {
-        CountdownText.text = (txt);
-    }
+    // void UpdateCountdown(string txt)
+    // {
+    //     CountdownText.text = (txt);
+    // }
 }
