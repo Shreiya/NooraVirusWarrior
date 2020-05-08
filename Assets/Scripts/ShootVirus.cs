@@ -27,13 +27,13 @@ public class ShootVirus : MonoBehaviour
                     Vector3 getPos = rig.position;
                     var ani = Instantiate(SlashAnim, getPos, Quaternion.identity) as GameObject;
 
-
                     Destroy(rig.gameObject, .5F);
                     Destroy(ani.gameObject, .5F);
                 
                     if(PlayerPrefs.GetInt("SOUND") == 1)
                     {
-                        rig.GetComponent<AudioSource>().Play();
+                        ani.GetComponent<AudioSource>().Play();
+                        rig.GetComponent<AudioSource>().PlayDelayed(.3F);
                     }
                     //Destroy Anim
                     StartCoroutine(waitSeconds(.3f));
@@ -44,7 +44,7 @@ public class ShootVirus : MonoBehaviour
                         ScoreScript.scoreValue += 1;
                         
                         var redDes = Instantiate(redDestroyedAnim, getPos, Quaternion.identity) as GameObject;
-                        Destroy(redDes.gameObject, .3F);
+                        Destroy(redDes.gameObject, .4F);
                     }
                     if (rig.gameObject.tag == "EnemyBoss")
                     {
