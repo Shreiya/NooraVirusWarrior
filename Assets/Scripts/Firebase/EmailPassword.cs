@@ -51,7 +51,7 @@ public class EmailPassword : MonoBehaviour
 
         var u_pass = PlayerPrefs.GetString("U_PASS");
 
-        if (u_email != null && u_pass != null && u_name != null)
+        if (u_email != null && u_pass != null && u_name != null && u_name != " ")
         {
             NameInput.text = u_name;
             UserNameInput = u_email;
@@ -192,7 +192,7 @@ public class EmailPassword : MonoBehaviour
 
             // Log In Message
             var userName = PlayerPrefs.GetString("U_NAME");
-            LoginResultText.text = "Welcome " + userName + " to GoCorona Game!!";
+            LoginResultText.text = "Hi! " + userName;
             Debug.LogFormat("Successfully signed in as {0}", userName);
         });
     }
