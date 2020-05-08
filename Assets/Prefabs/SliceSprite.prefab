@@ -1,6 +1,10 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+<<<<<<< HEAD
+--- !u!1 &272928444598262367
+=======
 --- !u!1 &6452752508163028075
+>>>>>>> 9a808cd8e184d818dc50106f23942125158cd414
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,10 +12,17 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
+<<<<<<< HEAD
+  - component: {fileID: 272928444598262362}
+  - component: {fileID: 272928444598262361}
+  - component: {fileID: 272928444598262360}
+  - component: {fileID: 272928444598262363}
+=======
   - component: {fileID: 6452752508163028087}
   - component: {fileID: 6452752508163028086}
   - component: {fileID: 6452752508163028073}
   - component: {fileID: 6452752508163028072}
+>>>>>>> 9a808cd8e184d818dc50106f23942125158cd414
   m_Layer: 0
   m_Name: SliceSprite
   m_TagString: Untagged
@@ -19,13 +30,21 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+<<<<<<< HEAD
+--- !u!4 &272928444598262362
+=======
 --- !u!4 &6452752508163028087
+>>>>>>> 9a808cd8e184d818dc50106f23942125158cd414
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
+<<<<<<< HEAD
+  m_GameObject: {fileID: 272928444598262367}
+=======
   m_GameObject: {fileID: 6452752508163028075}
+>>>>>>> 9a808cd8e184d818dc50106f23942125158cd414
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 1}
   m_LocalScale: {x: 0.05, y: 0.05, z: 0.05}
@@ -33,13 +52,21 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+<<<<<<< HEAD
+--- !u!212 &272928444598262361
+=======
 --- !u!212 &6452752508163028086
+>>>>>>> 9a808cd8e184d818dc50106f23942125158cd414
 SpriteRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
+<<<<<<< HEAD
+  m_GameObject: {fileID: 272928444598262367}
+=======
   m_GameObject: {fileID: 6452752508163028075}
+>>>>>>> 9a808cd8e184d818dc50106f23942125158cd414
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
@@ -83,14 +110,22 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+<<<<<<< HEAD
+--- !u!95 &272928444598262360
+=======
 --- !u!95 &6452752508163028073
+>>>>>>> 9a808cd8e184d818dc50106f23942125158cd414
 Animator:
   serializedVersion: 3
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
+<<<<<<< HEAD
+  m_GameObject: {fileID: 272928444598262367}
+=======
   m_GameObject: {fileID: 6452752508163028075}
+>>>>>>> 9a808cd8e184d818dc50106f23942125158cd414
   m_Enabled: 1
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: bb7212093e71efd449f21d58ca06f198, type: 2}
@@ -102,13 +137,21 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+<<<<<<< HEAD
+--- !u!114 &272928444598262363
+=======
 --- !u!114 &6452752508163028072
+>>>>>>> 9a808cd8e184d818dc50106f23942125158cd414
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
+<<<<<<< HEAD
+  m_GameObject: {fileID: 272928444598262367}
+=======
   m_GameObject: {fileID: 6452752508163028075}
+>>>>>>> 9a808cd8e184d818dc50106f23942125158cd414
   m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a4d98b4f0fe62ec46ac7d21b87d86bca, type: 3}
