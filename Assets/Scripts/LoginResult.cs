@@ -12,5 +12,7 @@ public class LoginResult : MonoBehaviour
         var userName = PlayerPrefs.GetString("U_NAME");
         LoginResultText.text = "Hi! " + userName;
         Debug.LogFormat("Successfully signed in as {0}", userName);
+
+        PlayerPrefs.SetInt("SOUND", 1);
     }
 }

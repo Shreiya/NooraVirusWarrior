@@ -27,7 +27,10 @@ public class ShootVirus : MonoBehaviour
                     // Destroy Gameobjects
                     Destroy(rig.gameObject, .5F);
                     Destroy(ani.gameObject, .5F);
-                    rig.GetComponent<AudioSource>().Play();
+                    if(PlayerPrefs.GetInt("SOUND") == 1)
+                    {
+                        rig.GetComponent<AudioSource>().Play();
+                    }
 
                     // Update Score
                     ScoreScript.scoreValue += 1;
