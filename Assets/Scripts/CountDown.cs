@@ -43,17 +43,17 @@ public class CountDown : MonoBehaviour
         else if (CountdownTime.ToString("F0") == "3")
         {
             CountdownImage.GetComponent<Image>().overrideSprite = TWO;
-            CountDownTransform.sizeDelta = new Vector2 (407, 407);
+            CountDownTransform.sizeDelta = new Vector2 (300, 300);
         }
         else if (CountdownTime.ToString("F0") == "2")
         {
             CountdownImage.GetComponent<Image>().overrideSprite = ONE;
-            CountDownTransform.sizeDelta = new Vector2 (307, 307);
+            CountDownTransform.sizeDelta = new Vector2 (200, 200);
         }
         else
         {
             CountdownImage.GetComponent<Image>().overrideSprite = GO;
-            CountDownTransform.sizeDelta = new Vector2 (207, 207);
+            CountDownTransform.sizeDelta = new Vector2 (150, 150);
         }
 
         if (CountdownTime<= 0)
