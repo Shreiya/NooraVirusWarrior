@@ -61,14 +61,14 @@ public class EmailPassword : MonoBehaviour
             Login(u_email, u_pass);
         }
 
-        SignupButton.onClick.AddListener(() => Signup(UserNameInput, PasswordInput));
+        SignupButton.onClick.AddListener(() => Signup(UserNameInput, PasswordInput, NameInput.text));
         // LoginButton.onClick.AddListener(() => Login(UserNameInput, PasswordInput));
     }
 
     // Sign Up user in Database
-    public void Signup(string email, string password)
+    public void Signup(string email, string password, string name)
     {
-        if (string.IsNullOrEmpty(email) || string.IsNullOrEmpty(password))
+        if (string.IsNullOrEmpty(email) || string.IsNullOrEmpty(password) || string.IsNullOrWhiteSpace(name))
         {
             //Error handling
             return;
