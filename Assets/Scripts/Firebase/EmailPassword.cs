@@ -103,6 +103,8 @@ public class EmailPassword : MonoBehaviour
             
             //Set Default Score to 0
             PlayerPrefs.SetInt("U_SCORE", 0);
+            // Set How to Play panel active (First time User)
+            PlayerPrefs.SetInt("U_TUTORIAL", 1);
 
             // Update User's Name
             UpdateName();

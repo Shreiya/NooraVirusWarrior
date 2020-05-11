@@ -16,7 +16,7 @@ public class SpawnScript : MonoBehaviour
     IEnumerator StartSpawning()
     {
         yield return new WaitForSeconds(5);
-        for (int i = 0; i < 12; i++)
+        for (int i = 0; i < Virus.Length; i++)
         {
             Vector3 randomPos = new Vector3(Random.Range(-2F, 2F), Random.Range(-2F, 2F), Random.Range(-2F, 2F));
             Instantiate(Virus[i], SpawnPoint[i].position - randomPos, Quaternion.identity);
