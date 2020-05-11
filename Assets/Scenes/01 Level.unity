@@ -808,7 +808,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'coronaviruses : )'
+  m_Text: coronaviruses
 --- !u!222 &340344253
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1607,7 +1607,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: You shot
+  m_Text: You destroyed
 --- !u!222 &582661303
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2664,7 +2664,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: WE CAN DO BETTER :)
+  m_Text: WE CAN DO BETTER
 --- !u!222 &1045549005
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -4404,7 +4404,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: You shot only
+  m_Text: You destroyed only
 --- !u!222 &2075637116
 CanvasRenderer:
   m_ObjectHideFlags: 0
