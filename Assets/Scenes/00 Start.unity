@@ -399,7 +399,7 @@ GameObject:
   - component: {fileID: 314498730}
   - component: {fileID: 314498729}
   m_Layer: 5
-  m_Name: Summary Text
+  m_Name: Summary Head
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -419,10 +419,10 @@ RectTransform:
   m_Father: {fileID: 1951333161}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.08483333, y: 0.5}
+  m_AnchorMin: {x: 0.08483333, y: 0.7274376}
   m_AnchorMax: {x: 0.91666675, y: 0.8235313}
   m_AnchoredPosition: {x: -0.5, y: 3}
-  m_SizeDelta: {x: 1, y: -14}
+  m_SizeDelta: {x: 1, y: 6}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &314498729
 MonoBehaviour:
@@ -443,21 +443,21 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 12800000, guid: 8554aeea0a4e2a748a8a42a7b1541351, type: 3}
+    m_Font: {fileID: 12800000, guid: da28b4e34c4189744b73c3c81056eb33, type: 3}
     m_FontSize: 40
     m_FontStyle: 0
     m_BestFit: 1
     m_MinSize: 4
-    m_MaxSize: 41
-    m_Alignment: 0
+    m_MaxSize: 55
+    m_Alignment: 6
     m_AlignByGeometry: 1
     m_RichText: 1
     m_HorizontalOverflow: 0
-    m_VerticalOverflow: 0
+    m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: "We all want COVID-19 to be gone! Here\u2019s an exciting game that allows
-    you to become a warrior and destroy coronavirus particles. The more particles
-    you kill, the greater your chances of saving everyone around you from infection!\r"
+  m_Text: 'We all want
+
+    <b>COVID-19</b> to be gone!'
 --- !u!222 &314498730
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -719,7 +719,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 4cb56a805a7c4eb458dfab25375a882f, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 453f822bf46f4544ba479c07d2cc5ff7, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -1031,16 +1031,16 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 822917895}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 7}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1951333161}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.08483333, y: 0.25231248}
-  m_AnchorMax: {x: 0.91666675, y: 0.37271875}
-  m_AnchoredPosition: {x: -0.5, y: 1}
-  m_SizeDelta: {x: -14, y: -16}
+  m_AnchorMin: {x: 0, y: 0.2734375}
+  m_AnchorMax: {x: 0, y: 0.2734375}
+  m_AnchoredPosition: {x: 275, y: 0}
+  m_SizeDelta: {x: 550, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &822917897
 MonoBehaviour:
@@ -1315,7 +1315,7 @@ RectTransform:
   m_Children:
   - {fileID: 972317996}
   m_Father: {fileID: 1951333161}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.03766667, y: 0.124218754}
   m_AnchorMax: {x: 0.95416665, y: 0.20400001}
@@ -1480,7 +1480,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: LET'S PLAY
+  m_Text: PLAY NOW!
 --- !u!222 &972317998
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1926,6 +1926,85 @@ CanvasRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1161639202}
+  m_CullTransparentMesh: 0
+--- !u!1 &1169245018
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1169245019}
+  - component: {fileID: 1169245021}
+  - component: {fileID: 1169245020}
+  m_Layer: 5
+  m_Name: Summary Text
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1169245019
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1169245018}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1951333161}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.08483333, y: 0.39600003}
+  m_AnchorMax: {x: 0.91666675, y: 0.6788751}
+  m_AnchoredPosition: {x: 0.49996948, y: 1.8999939}
+  m_SizeDelta: {x: 1, y: -2.800003}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1169245020
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1169245018}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FontData:
+    m_Font: {fileID: 12800000, guid: 8554aeea0a4e2a748a8a42a7b1541351, type: 3}
+    m_FontSize: 40
+    m_FontStyle: 0
+    m_BestFit: 1
+    m_MinSize: 4
+    m_MaxSize: 41
+    m_Alignment: 3
+    m_AlignByGeometry: 1
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: "Here\u2019s an exciting game that allows you to become a warrior and destroy
+    coronavirus particles. The more particles you kill, the greater your chances
+    of saving everyone around you from infection!\r"
+--- !u!222 &1169245021
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1169245018}
   m_CullTransparentMesh: 0
 --- !u!1 &1192824382
 GameObject:
@@ -3116,7 +3195,7 @@ RectTransform:
   m_Children:
   - {fileID: 1161639203}
   m_Father: {fileID: 1951333161}
-  m_RootOrder: 7
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.03766667, y: 0.0233125}
   m_AnchorMax: {x: 0.95416665, y: 0.0975625}
@@ -3321,6 +3400,7 @@ RectTransform:
   - {fileID: 1634967696}
   - {fileID: 884630897}
   - {fileID: 314498728}
+  - {fileID: 1169245019}
   - {fileID: 1967327543}
   - {fileID: 822917896}
   - {fileID: 915164179}
@@ -3509,7 +3589,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 995661c29c9924849a4d6943c5d5f77e, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 4ed633371d963974f85d36c702bdc1cd, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -3557,13 +3637,13 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1951333161}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.08483333, y: 0.3844375}
-  m_AnchorMax: {x: 0.85133326, y: 0.45712504}
-  m_AnchoredPosition: {x: -9.952026, y: 11.5}
-  m_SizeDelta: {x: -26.090027, y: -3}
-  m_Pivot: {x: 0.5, y: 0.5}
+  m_AnchorMin: {x: 0, y: 0.34887502}
+  m_AnchorMax: {x: 0, y: 0.34887502}
+  m_AnchoredPosition: {x: 61, y: 9.200012}
+  m_SizeDelta: {x: 525.9, y: 72.5}
+  m_Pivot: {x: 0, y: 0.5}
 --- !u!114 &1967327544
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3585,10 +3665,10 @@ MonoBehaviour:
   m_FontData:
     m_Font: {fileID: 12800000, guid: da28b4e34c4189744b73c3c81056eb33, type: 3}
     m_FontSize: 20
-    m_FontStyle: 0
+    m_FontStyle: 1
     m_BestFit: 1
     m_MinSize: 2
-    m_MaxSize: 55
+    m_MaxSize: 30
     m_Alignment: 3
     m_AlignByGeometry: 1
     m_RichText: 1
