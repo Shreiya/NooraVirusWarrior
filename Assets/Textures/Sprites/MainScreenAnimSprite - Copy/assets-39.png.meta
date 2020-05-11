@@ -1,31 +1,31 @@
 fileFormatVersion: 2
-guid: 694175ec5bbc5444fab2bd784a78a153
+guid: 286c10bdc943c7842b7518097f9498c1
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 2264304053505916878
-    second: png assets-39_0
+      213: 47246583236504262
+    second: assets-39_0
   - first:
-      213: -8490288725890807626
-    second: png assets-39_1
+      213: -6591637035801870022
+    second: assets-39_1
   - first:
-      213: 1279447547146518944
-    second: png assets-39_2
+      213: 9165866402784209426
+    second: assets-39_2
   - first:
-      213: -3936246142401814978
-    second: png assets-39_3
+      213: 4997249193155747333
+    second: assets-39_3
   - first:
-      213: -647978275544902337
-    second: png assets-39_4
+      213: 156212883187598895
+    second: assets-39_4
   - first:
-      213: 8543891573384102513
-    second: png assets-39_5
+      213: 7964777371427098530
+    second: assets-39_5
   - first:
-      213: 5027432877822909389
-    second: png assets-39_6
+      213: 7410735855096158661
+    second: assets-39_6
   - first:
-      213: -4083292630987903596
-    second: png assets-39_7
+      213: 6502637467642213114
+    second: assets-39_7
   externalObjects: {}
   serializedVersion: 10
   mipmaps:
@@ -64,7 +64,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -122,7 +122,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: png assets-39_0
+      name: assets-39_0
       rect:
         serializedVersion: 2
         x: 144
@@ -136,14 +136,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ecf72b43a8c6c6f10800000000000000
-      internalID: 2264304053505916878
+      spriteID: 6caa9a2648ad7a000800000000000000
+      internalID: 47246583236504262
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: png assets-39_1
+      name: assets-39_1
       rect:
         serializedVersion: 2
         x: 844
@@ -157,14 +157,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6b846c4236f6c2a80800000000000000
-      internalID: -8490288725890807626
+      spriteID: a3188b83a0dc584a0800000000000000
+      internalID: -6591637035801870022
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: png assets-39_2
+      name: assets-39_2
       rect:
         serializedVersion: 2
         x: 217
@@ -178,14 +178,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0a1c96ce3c281c110800000000000000
-      internalID: 1279447547146518944
+      spriteID: 21ae3a43ee2b33f70800000000000000
+      internalID: 9165866402784209426
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: png assets-39_3
+      name: assets-39_3
       rect:
         serializedVersion: 2
         x: 854
@@ -199,14 +199,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e3e53a51df4af59c0800000000000000
-      internalID: -3936246142401814978
+      spriteID: 50ed7242aabc95540800000000000000
+      internalID: 4997249193155747333
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: png assets-39_4
+      name: assets-39_4
       rect:
         serializedVersion: 2
         x: 0
@@ -220,14 +220,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f35d9f7013be107f0800000000000000
-      internalID: -647978275544902337
+      spriteID: f268cb32acafa2200800000000000000
+      internalID: 156212883187598895
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: png assets-39_5
+      name: assets-39_5
       rect:
         serializedVersion: 2
         x: 0
@@ -241,14 +241,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 17243075e10029670800000000000000
-      internalID: 8543891573384102513
+      spriteID: 2af4bf2f1d2988e60800000000000000
+      internalID: 7964777371427098530
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: png assets-39_6
+      name: assets-39_6
       rect:
         serializedVersion: 2
         x: 654
@@ -262,14 +262,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: dcb11ced09705c540800000000000000
-      internalID: 5027432877822909389
+      spriteID: 5c9d1471ff838d660800000000000000
+      internalID: 7410735855096158661
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: png assets-39_7
+      name: assets-39_7
       rect:
         serializedVersion: 2
         x: 1355
@@ -283,8 +283,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 49deeff7cfa3557c0800000000000000
-      internalID: -4083292630987903596
+      spriteID: af2b5f903520e3a50800000000000000
+      internalID: 6502637467642213114
       vertices: []
       indices: 
       edges: []
@@ -292,7 +292,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 5e97eb03825dee720800000000000000
+    spriteID: b1242f9f102b6ac43bd2fabf4ce51c3a
     internalID: 0
     vertices: []
     indices: 
