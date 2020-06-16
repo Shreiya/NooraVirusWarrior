@@ -11,12 +11,20 @@ public class XRBuildPostProcessor {
       Type pbxProjectType = Type.GetType("UnityEditor.iOS.Xcode.PBXProject, UnityEditor.iOS.Extensions.Xcode, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null");
       var proj = Activator.CreateInstance(pbxProjectType);
       MethodInfo readFromFileMethod = pbxProjectType.GetMethod("ReadFromFile");
-      MethodInfo targetGuidByNameMethod = pbxProjectType.GetMethod("TargetGuidByName");
+      string unityTarget = null;
+      MethodInfo unityMainTargetGuidMethod = pbxProjectType.GetMethod("GetUnityMainTargetGuid");
+      MethodInfo unityFrameworkTargetGuidMethod = pbxProjectType.GetMethod("GetUnityFrameworkTargetGuid");
       MethodInfo addFrameworkToProjectMethod = pbxProjectType.GetMethod("AddFrameworkToProject");
       MethodInfo writeToFileMethod = pbxProjectType.GetMethod("WriteToFile");
       string projPath = pathToBuiltProject + "/Unity-iPhone.xcodeproj/project.pbxproj";
       readFromFileMethod.Invoke(proj, new[] {projPath});
-      string unityTarget = (string) targetGuidByNameMethod.Invoke(proj, new[] {"Unity-iPhone"});
+      // Unity 2019.3+ uses GetUnityMainTargetGuid()/GetUnityFrameworkTargetGuid() instead of TargetGuidByName()
+      if (unityMainTargetGuidMethod != null && unityFrameworkTargetGuidMethod != null) {
+        unityTarget = (string)unityFrameworkTargetGuidMethod.Invoke(proj, null);
+      } else {
+        unityMainTargetGuidMethod = pbxProjectType.GetMethod("TargetGuidByName");
+        unityTarget = (string)unityMainTargetGuidMethod.Invoke(proj, new[] {"Unity-iPhone"});
+      }
       addFrameworkToProjectMethod.Invoke(proj, new object[] {unityTarget, "Accelerate.framework", true});
       addFrameworkToProjectMethod.Invoke(proj, new object[] {unityTarget, "AVFoundation.framework", true});
       addFrameworkToProjectMethod.Invoke(proj, new object[] {unityTarget, "UIKit.framework", true});
