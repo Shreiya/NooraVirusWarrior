@@ -17,13 +17,80 @@ MonoBehaviour:
   - beta
   channel: release
   installedChannel: release
-  version: 11.2.6.519
+  version: 14.0.7.949
   autoUpdate: 1
   autoUpdateSec: 3600
   updateTimeoutSec: 25
   downloadTimeoutSec: 600
   updateAvailable: 0
   releaseNotes:
+  - id: 14
+    notes: '## Release 14
+
+
+      ### 8th Wall Web
+
+      New Features:
+
+      -
+      Introducing 8th Wall Face Effects: Attach 3D objects to face attachment points
+      and paint your face with custom materials, shaders or videos.
+
+      - Selfie
+      Mode: Use the front camera with a mirrored display to get the perfect selfie
+      shot.
+
+      - Desktop Browsers: Enable your image target and face effect experiences
+      to run in desktop browsers utilizing the webcam.
+
+
+      Fixes and Enhancements:
+
+      -
+      Enhanced capture field of view on Pixel 4/4XL phones.
+
+      - Enhanced camera
+      profiles for certain phone models.
+
+      - Fixed an issue with changing device
+      orientation during startup.
+
+      - Fixed an issue with swapping the camera
+      direction on the same a-scene.
+
+      - Fixed an issue with AFrame look-controls
+      not being removed on scene restart.
+
+      - Improved experience for some Android
+      phones with multiple cameras.
+
+      - Other fixes and enhancements.
+
+
+      XRExtras
+      Enhancements:
+
+      - Enhanced almost there flows for experiences that can
+      be viewed on desktop.
+
+      - PauseOnBlur module stops the camera when your
+      tab is not active.
+
+      - New AFrame components for easy face effects and
+      desktop experience development.
+
+      - New ThreeExtras for rendering PBR
+      materials, basic materials, and videos to faces.
+
+
+      ### Unity
+
+
+      Fixes
+      and Enhancements:
+
+      - Update to XCode build postprocessor supports new
+      Unity APIs.'
   - id: 13.2
     notes: '## Release 13.2
 
@@ -244,20 +311,3 @@ MonoBehaviour:
       devices.\n- Fixed crash on ARKit devices when ARWorldTrackingConfiguration
       is not available.\n- Fixed issue on ARCore devices where camera permissions
       were not requested properly in apps built with Unity 2018.3 or newer."
-  - id: 10
-    notes: "## Release 10.0\n\nRelease 10 adds a revamped web developer console with
-      streamlined developer-mode, access to allowed origins and QR codes. It adds
-      8th Wall Web support for XRExtras, an open-source package for error handling,
-      loading visualizations, \"almost there\" flows, and more.\n\n### 8th Wall Web\nNew
-      Features:\n* Revamped web developer console.\n* XR Extras provides a convenient
-      solution for:\n  * Load screens and requesting camera permissions.\n  * Redirecting
-      users from unsupported devices or browsers (\"almost there\").\n  * Runtime
-      error handling.\n  * Drawing a full screen camera feed in low-level frameworks
-      like threejs.\n* Added public lighting, hit test interfaces to XrController.\n*
-      Other minor API additions.\n\nFixes and Enhancements:\n* Improved app startup
-      speed.\n* Fixed a framework issue where errors were not propagated on startup.\n*
-      Fixed an issue that could occur with WebGL during initialization.\n* Use window.screen
-      interface for device orientation if available.\n* Fixed a threejs issue that
-      could occur when the canvas is resized.\n\n### 8th Wall XR for Unity\nFixes
-      and Enhancements:\n* Better support for Android camera permissions in Unity
-      2018.3."
