@@ -6,6 +6,7 @@ public class ShootVirus : MonoBehaviour
 {
 
     public GameObject SlashAnim;
+    public GameObject SquishSound;
     public GameObject redDestroyedAnim;
     // public GameObject purpleDestroyedAnim;
     public GameObject MainCamera;
@@ -26,17 +27,19 @@ public class ShootVirus : MonoBehaviour
                     // Play slice Animation
                     Vector3 getPos = rig.position;
                     var ani = Instantiate(SlashAnim, getPos, Quaternion.identity) as GameObject;
+                    var squish = Instantiate(SquishSound, getPos, Quaternion.identity) as GameObject;
 
-                    Destroy(rig.gameObject, .5F);
+                    Destroy(rig.gameObject);
                     Destroy(ani.gameObject, .5F);
+                    Destroy(squish.gameObject, .7F);
                 
                     if(PlayerPrefs.GetInt("SOUND") == 1)
                     {
                         ani.GetComponent<AudioSource>().Play();
-                        rig.GetComponent<AudioSource>().PlayDelayed(.3F);
+                        squish.GetComponent<AudioSource>().PlayDelayed(.3F);
                     }
                     //Destroy Anim
-                    StartCoroutine(waitSeconds(.3f));
+                    // StartCoroutine(waitSeconds(.3f));
 
                     // Update Score
                     if (rig.gameObject.tag == "Enemy")
