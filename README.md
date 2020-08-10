@@ -1,5 +1,5 @@
-# Go-Corona-AR
- A Shooter game to kill Coronavirus in Augmented Reality
+# Virus Warrior
+ A Shooter game to kill Virus in Augmented Reality
 
 <p align="center">
   <br>
