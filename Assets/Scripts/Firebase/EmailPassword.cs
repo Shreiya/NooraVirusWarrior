@@ -10,10 +10,6 @@ using System.Text;
 
 public class EmailPassword : MonoBehaviour
 {
-
-    // public GameObject signUpUI;
-    // public GameObject loggedInUI;
-
     private FirebaseAuth auth;
     public InputField NameInput;
     string PasswordInput, UserNameInput;
@@ -31,25 +27,26 @@ public class EmailPassword : MonoBehaviour
     {
         auth = FirebaseAuth.DefaultInstance;
         //Just an example to save typing in the login form
-        PlayerPrefs.SetString("U_PASS", "GoCorona");
+        PlayerPrefs.SetString("U_PASS", "viruswarrior");
         
         var u_name = PlayerPrefs.GetString("U_NAME");
 
         var u_email = PlayerPrefs.GetString("U_EMAIL");
 
         Debug.Log("Current Email ID = " + u_email);
+        
         // If Email is null, Assign a new Email
-        if(u_email== "")
+        if(String.IsNullOrWhiteSpace(u_email))
         {
             System.Random size = new System.Random();
-            string randomEmail = GetUniqueKey(size.Next(8, 16)) + "@gocorona.com";
+            string randomEmail = GetUniqueKey(size.Next(8, 16)) + "@viruswarrior.com";
             PlayerPrefs.SetString("U_EMAIL", randomEmail);
             Debug.Log("New email created: " + randomEmail);
         }
 
         u_email = PlayerPrefs.GetString("U_EMAIL");
 
-        var u_pass = PlayerPrefs.GetString("U_PASS");
+        var u_pass = "viruswarrior";
 
         if (u_email != null && u_pass != null && u_name != null && u_name != " ")
         {
@@ -74,7 +71,7 @@ public class EmailPassword : MonoBehaviour
             return;
         }
 
-        PlayerPrefs.SetString("U_EMAIL", email);
+        // PlayerPrefs.SetString("U_EMAIL", email);
         auth.CreateUserWithEmailAndPasswordAsync(email, password).ContinueWith(task =>
         {
             if (task.IsCanceled)
@@ -95,10 +92,8 @@ public class EmailPassword : MonoBehaviour
                 newUser.DisplayName, newUser.UserId);
             UpdateErrorMessage("Signup Success");
 
-
-            PlayerPrefs.SetString("U_EMAIL", newUser != null ? newUser.Email : "Unknown");
-            PlayerPrefs.SetString("U_PASS", newUser != null ? PasswordInput : "Unknown");
-            PlayerPrefs.SetString("U_NAME", newUser != null ? newUser.DisplayName : "Unknown");
+            // PlayerPrefs.SetString("U_EMAIL", newUser != null ? newUser.Email : "Unknown");
+            // PlayerPrefs.SetString("U_PASS", newUser != null ? PasswordInput : "Unknown");
             PlayerPrefs.SetString("U_ID", newUser != null ? newUser.UserId : "Unknown");
             
             //Set Default Score to 0
@@ -109,10 +104,13 @@ public class EmailPassword : MonoBehaviour
             // Update User's Name
             UpdateName();
 
-            Debug.Log("--------------Creds------------------ \n" + PlayerPrefs.GetString("U_EMAIL") + "  " + PlayerPrefs.GetString("U_PASS") + "  " + PlayerPrefs.GetString("U_NAME") + "  " + PlayerPrefs.GetString("U_ID"));
+            PlayerPrefs.SetString("U_NAME", name);
+            // var umail = PlayerPrefs.GetString("U_EMAIL");
+
+            Debug.Log("--------------Creds------------------ \n" + email + "  " + name + "  " + PlayerPrefs.GetString("U_ID"));
 
             // LogIn User
-            Login(PlayerPrefs.GetString("U_EMAIL"), PlayerPrefs.GetString("U_PASS"));
+            Login(email, "viruswarrior");
         });
     }
 
@@ -186,16 +184,16 @@ public class EmailPassword : MonoBehaviour
 
             SceneManager.LoadScene("00 Start");
 
-            PlayerPrefs.SetString("U_NAME", user != null ? user.DisplayName : "Unknown");
+            var usrname = user.DisplayName;
+            // PlayerPrefs.SetString("U_NAME", user != null ? user.DisplayName : "Unknown");
             // SceneManager.LoadScene("LoginResults");
-            Debug.Log("-------------Creds------------------- \n" + PlayerPrefs.GetString("U_EMAIL") + "  " + PlayerPrefs.GetString("U_PASS") + "  " + PlayerPrefs.GetString("U_NAME") + "  " + PlayerPrefs.GetString("U_ID"));
+            Debug.Log("-------------Creds------------------- \n" + PlayerPrefs.GetString("U_EMAIL") + "  " + user.DisplayName + "  " + PlayerPrefs.GetString("U_ID"));
             // signUpUI.SetActive(false);
             // loggedInUI.SetActive(true);
 
             // Log In Message
-            var userName = PlayerPrefs.GetString("U_NAME");
-            LoginResultText.text = "Hi! " + userName;
-            Debug.LogFormat("Successfully signed in as {0}", userName);
+            LoginResultText.text = "Hi! " + usrname;
+            Debug.LogFormat("Successfully signed in as {0}", usrname);
         });
     }
 
