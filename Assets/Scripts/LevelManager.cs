@@ -23,7 +23,8 @@ public class LevelManager : MonoBehaviour
 	public void LoadLevel(string name)
 	{
 		Debug.Log ("New Level Load : " + name);
-		SceneManager.LoadScene (name);
+		// SceneManager.LoadScene (name);
+		StartCoroutine(LoadSceneAsync(name));
 	}
 
 	public void QuitRequest ()
@@ -36,4 +37,20 @@ public class LevelManager : MonoBehaviour
 	{
 		SceneManager.LoadScene (SceneManager.GetActiveScene().buildIndex + 1);
 	}
+
+	IEnumerator LoadSceneAsync(string sceneToLoad)
+    {
+        // The Application loads the Scene in the background as the current Scene runs.
+        // This is particularly good for creating loading screens.
+        // You could also load the Scene by using sceneBuildIndex. In this case Scene2 has
+        // a sceneBuildIndex of 1 as shown in Build Settings.
+
+        AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(sceneToLoad);
+
+        // Wait until the asynchronous scene fully loads
+        while (!asyncLoad.isDone)
+        {
+            yield return null;
+        }
+    }
 }

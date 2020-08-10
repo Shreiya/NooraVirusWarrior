@@ -182,19 +182,28 @@ public class EmailPassword : MonoBehaviour
             Debug.LogFormat("User signed in successfully: {0} ({1})",
                 user.DisplayName, user.UserId);
 
-            SceneManager.LoadScene("00 Start");
+            // Load Start Scene Acync
+            StartCoroutine(LoadStartScene());
 
-            var usrname = user.DisplayName;
-            // PlayerPrefs.SetString("U_NAME", user != null ? user.DisplayName : "Unknown");
-            // SceneManager.LoadScene("LoginResults");
-            Debug.Log("-------------Creds------------------- \n" + PlayerPrefs.GetString("U_EMAIL") + "  " + user.DisplayName + "  " + PlayerPrefs.GetString("U_ID"));
-            // signUpUI.SetActive(false);
-            // loggedInUI.SetActive(true);
-
-            // Log In Message
-            LoginResultText.text = "Hi! " + usrname;
-            Debug.LogFormat("Successfully signed in as {0}", usrname);
+            LoginResultText.text = "Hi! " + user.DisplayName;
+            // Debug.LogFormat("Successfully signed in as {0}", usrname);
         });
+    }
+
+    IEnumerator LoadStartScene()
+    {
+        // The Application loads the Scene in the background as the current Scene runs.
+        // This is particularly good for creating loading screens.
+        // You could also load the Scene by using sceneBuildIndex. In this case Scene2 has
+        // a sceneBuildIndex of 1 as shown in Build Settings.
+
+        AsyncOperation asyncLoad = SceneManager.LoadSceneAsync("00 Start");
+
+        // Wait until the asynchronous scene fully loads
+        while (!asyncLoad.isDone)
+        {
+            yield return null;
+        }
     }
 
 
